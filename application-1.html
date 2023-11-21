@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixture Timing Calculator</title>
+    <link rel="stylesheet" href="./styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h2 class="page-title">Fixture Timing Calculator</h2>
+        <div class="form-container">
+            <div class="form-group">
+                <label for="fixture">Fixture:</label>
+                <select id="fixture" class="form-control">
+                    <option value="Shower">Shower</option>
+                    <option value="Lavatory">Lavatory</option>
+                    <option value="Mopsink">Mopsink</option>
+                    <option value="Sink">Sink</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="required-label" for="flow">Flow (GPM):</label>
+                <input type="number" id="flow" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label class="required-label" for="length">Length (in feet):</label>
+                <input type="number" id="length" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label class="required-label" for="diameter">Diameter (in inches):</label>
+                <input type="number" id="diameter" class="form-control" required>
+            </div>
+
+            <button id="calculateBtn" class="calculate-btn">Calculate Timing</button>
+
+            <div class="form-group">
+                <label for="timingOutputMinutes">Time (Minutes):</label>
+                <input type="text" id="timingOutputMinutes" class="form-control" readonly>
+            </div>
+            <div class="form-group">
+                <label for="timingOutputSeconds">Time (Seconds):</label>
+                <input type="text" id="timingOutputSeconds" class="form-control" readonly>
+            </div>
+        </div>
+        <hr>
+
+        <div class="notes">
+            <p>Notes:</p>
+            <ul>
+                <li>Values for flow are default and user adjustable.</li>
+                <li>For longest time required, input "GPM" for fixture with the lowest flow rate. (for others)</li>
+                <li>Others represent dead-leg pipe serving more than one fixture.</li>
+                <li>Length of the pipe is the dead-leg length, that is the length of the pipe between the hot water primary loop and the point of use.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
